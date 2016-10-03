@@ -2262,7 +2262,7 @@ s.fixLoop = function () {
         s.slideTo(newIndex, 0, false, true);
     }
     //Fix For Positive Oversliding
-    else if ((s.params.slidesPerView === 'auto' && s.activeIndex >= s.loopedSlides * 2) || (s.activeIndex > s.slides.length - s.params.slidesPerView * 2)) {
+    else if ((s.params.slidesPerView === 'auto' && s.activeIndex >= s.loopedSlides * 2) || (s.activeIndex > ((s.slides.length - s.params.slidesPerView * 2) - Math.floor(s.loopedSlides/2)))) {
         newIndex = -s.slides.length + s.activeIndex + s.loopedSlides;
         newIndex = newIndex + s.loopedSlides;
         s.slideTo(newIndex, 0, false, true);
